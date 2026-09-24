@@ -1,0 +1,8 @@
+{
+  "exampleOnly": true,
+  "connectionName": "test-lab-playwright",
+  "transport": "HTTP",
+  "endpointTemplate": "https://<region>.mcp.playwright.microsoft.com/playwrightworkspaces/<workspace-id>/mcp",
+  "privateHeaderName": "x-api-key",
+  "instructions": "Not an MCP configuration. Use /mcp add in your client; enter the existing workspace endpoint and token privately. Never commit a completed copy. Do not change workspace authentication policy."
+}
