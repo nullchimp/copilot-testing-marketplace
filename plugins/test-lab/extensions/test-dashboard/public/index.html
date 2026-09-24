@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Test dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div><p class="eyebrow">TEST LAB / REPORT EVIDENCE</p><h1>Test dashboard</h1></div>
+        <button id="refresh" type="button">Refresh</button>
+      </header>
+      <p id="connection" class="muted" role="status">Loading recorded evidence...</p>
+      <div id="fatal" class="notice error" role="alert" hidden></div>
+      <label class="history-label" for="history">Recorded run</label>
+      <select id="history" disabled><option>No recorded runs</option></select>
+      <section id="empty" class="notice" hidden>
+        <h2>No test reports yet</h2>
+        <p>Use the test-lab skill to run the repository's existing test command and import its structured report. Opening this dashboard never starts tests.</p>
+      </section>
+      <article id="run" hidden>
+        <section class="run-heading"><h2 id="run-title">Recorded run</h2><span id="run-state" class="badge"></span></section>
+        <p id="state-detail" class="notice"></p>
+        <dl id="metadata"></dl>
+        <section aria-label="Test totals" id="totals" class="totals"></section>
+        <section id="issues-section" hidden><h2>Evidence notes</h2><ul id="issues"></ul></section>
+        <section id="suite-errors-section" hidden><h2>Suite / collection errors</h2><div id="suite-errors"></div></section>
+        <section>
+          <h2>Coverage <span class="muted small">Current-run Istanbul summary only</span></h2>
+          <div id="coverage"></div>
+        </section>
+        <section>
+          <h2>Suites and tests</h2>
+          <div class="filters">
+            <label>Search suites / tests<input id="search" type="search" placeholder="Name or failure text"></label>
+            <label>Status<select id="status">
+              <option value="all">All statuses</option><option value="passed">Passed</option>
+              <option value="failed">Failed</option><option value="error">Error</option>
+              <option value="skipped">Skipped</option><option value="todo">Todo</option><option value="unknown">Unknown</option>
+            </select></label>
+            <label>Order<select id="order"><option value="source">Report order</option><option value="slow">Slowest first</option></select></label>
+          </div>
+          <p id="matching" class="muted" aria-live="polite"></p>
+          <div id="tests"></div>
+          <div class="pagination"><button id="previous" type="button">Previous</button><span id="page"></span><button id="next" type="button">Next</button></div>
+        </section>
+        <section><h2>Slow tests <span class="muted small">Reported durations; not a performance benchmark</span></h2><ol id="slow"></ol></section>
+        <details><summary>Evidence provenance</summary><pre id="provenance"></pre></details>
+      </article>
+      <footer>Only runner reports contribute test counts. Browser observations and documentation lookups are separate evidence. Reports can contain private information; do not publish them.</footer>
+    </main>
+  </body>
+</html>

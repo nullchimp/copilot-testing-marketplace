@@ -1,0 +1,16 @@
+{
+  "name": "testing-marketplace",
+  "owner": { "name": "nullchimp" },
+  "metadata": {
+    "description": "Repository-aware testing with real report evidence.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "test-lab",
+      "description": "Run existing tests, inspect real reports in a native dashboard, and design regression tests.",
+      "version": "0.1.0",
+      "source": "./plugins/test-lab"
+    }
+  ]
+}

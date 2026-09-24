@@ -1,0 +1,13 @@
+{
+  "name": "test-lab",
+  "version": "0.1.0",
+  "description": "Report-driven testing, a native test dashboard, and Test Engineer.",
+  "author": { "name": "nullchimp" },
+  "repository": "https://github.com/nullchimp/copilot-testing-marketplace",
+  "license": "MIT",
+  "keywords": ["testing", "junit", "jest", "vitest", "canvas"],
+  "agents": "./agents",
+  "skills": "./skills",
+  "mcpServers": "./.mcp.json",
+  "extensions": ["./extensions"]
+}
